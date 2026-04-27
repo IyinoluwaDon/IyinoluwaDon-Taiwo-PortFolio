@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from 'react'
 const LINKS = {
   email: 'iyinoluwadontaiwo@gmail.com',
   github: 'https://github.com/IyinoluwaDon',
-  linkedin: '#',   // add when ready
+  linkedin: 'https://www.linkedin.com/in/iyinoluwa-don-taiwo',   
 }
 
 const SKILLS = [
