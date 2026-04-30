@@ -5,22 +5,15 @@ import { useState, useEffect, useRef } from 'react'
 const LINKS = {
   email: 'iyinoluwadontaiwo@gmail.com',
   github: 'https://github.com/IyinoluwaDon',
-  linkedin: 'https://www.linkedin.com/in/iyinoluwa-don-taiwo',
+  linkedin: 'https://www.linkedin.com/in/iyinoluwa-don-taiwo',   
 }
 
 const SKILLS = [
-  { label: 'Languages',        items: ['Python', 'SQL', 'JavaScript', 'PHP', 'HTML / CSS'] },
-  { label: 'ML & AI',          items: ['scikit-learn', 'XGBoost', 'PyTorch', 'NLTK', 'Transformers', 'GridSearchCV'] },
-  { label: 'Cloud & Deploy',   items: ['AWS Lambda', 'API Gateway', 'DynamoDB', 'S3', 'Flask', 'Streamlit'] },
-  { label: 'Data & Analytics', items: ['Pandas', 'Power BI', 'Excel', 'SQLite', 'Matplotlib', 'Plotly'] },
+  { label: 'Languages',         items: ['Python', 'SQL', 'JavaScript', 'PHP', 'HTML / CSS'] },
+  { label: 'ML & AI',           items: ['scikit-learn', 'XGBoost', 'TensorFlow', 'NLTK', 'Transformers', 'GridSearchCV'] },
+  { label: 'Cloud & Deploy',    items: ['AWS Lambda', 'API Gateway', 'DynamoDB', 'S3', 'Flask', 'Streamlit'] },
+  { label: 'Data & Analytics',  items: ['Pandas', 'Power BI', 'Excel', 'SQLite', 'Matplotlib', 'Plotly'] },
 ]
-
-// ─── PROJECTS ─────────────────────────────────────────────────────────────────
-// To add a GitHub repo link: replace '#' with your repo URL.
-//   Example: github: 'https://github.com/IyinoluwaDon/your-repo-name'
-// To add a live demo link:  replace null with the URL string.
-//   Example: demo: 'https://your-demo.streamlit.app'
-// To hide a link entirely:  set it to null.
 
 const PROJECTS = [
   {
@@ -28,23 +21,23 @@ const PROJECTS = [
     year: '2025',
     desc: 'End-to-end ML pipeline on the UCI Student Performance dataset. Trained six classifiers — Logistic Regression, Random Forest, XGBoost, SVM, KNN, Decision Tree — with GridSearchCV tuning, ROC curve evaluation, and pickle serialisation. Shipped as a five-page Streamlit app with a subject switcher.',
     stack: ['Python', 'scikit-learn', 'XGBoost', 'Streamlit'],
-    github: '#',   // ← ADD GITHUB LINK HERE
-    demo: null,    // ← ADD DEMO LINK HERE (or leave null to hide)
+    github: '#',
+    demo: '#',
   },
   {
     title: 'Serverless NLP Text Analyzer API',
     year: '2025',
     desc: 'Fully serverless NLP API deployed on AWS Lambda and API Gateway (eu-north-1). Handles tokenization, POS tagging, sentiment analysis, and TF-IDF scoring. Resolved real IAM permission issues and API path-matching bugs end to end.',
     stack: ['AWS Lambda', 'API Gateway', 'NLTK', 'Python'],
-    github: '#',   // ← ADD GITHUB LINK HERE
-    demo: null,    // ← ADD DEMO LINK HERE (or leave null to hide)
+    github: '#',
+    demo: null,
   },
   {
     title: 'Shebamiles Employee Management System',
     year: '2024',
     desc: 'Full-stack HR web app with PHP backend and MySQL database. Features query-parameter routing, sidebar navigation, and SQL VIEW-based reporting. Debugged complex backend routing issues and corrupted view definitions in production.',
     stack: ['PHP', 'MySQL', 'JavaScript', 'HTML / CSS'],
-    github: 'https://github.com/IyinoluwaDon/Shebamiles',  // ← already filled
+    github: 'https://github.com/IyinoluwaDon/Shebamiles',
     demo: null,
   },
   {
@@ -52,16 +45,16 @@ const PROJECTS = [
     year: '2025',
     desc: 'Exploratory data analysis on Brazilian real estate across all regions — 200k+ records. Covers data cleaning, currency normalisation, multi-region concatenation, and choropleth maps for regional price distribution insights.',
     stack: ['Python', 'Pandas', 'Plotly', 'Jupyter'],
-    github: '#',   // ← ADD GITHUB LINK HERE
-    demo: null,    // ← ADD DEMO LINK HERE (or leave null to hide)
+    github: '#',
+    demo: null,
   },
   {
     title: 'Renewable Energy Output Predictor',
     year: '2025',
     desc: 'XGBoost pipeline forecasting renewable energy output from meteorological features. Deployed as a documented REST API via Flask for dashboard integration.',
     stack: ['Python', 'XGBoost', 'Flask'],
-    github: '#',   // ← ADD GITHUB LINK HERE
-    demo: null,    // ← ADD DEMO LINK HERE (or leave null to hide)
+    github: '#',
+    demo: null,
     wip: true,
   },
 ]
@@ -76,18 +69,22 @@ const EXPERIENCE = [
   {
     period: '2025',
     role: 'SIWES Industrial Intern',
-    org: 'ipNX Nigeria · Lagos',
-    desc: 'Industrial training placement at ipNX, a leading Nigerian internet service provider and systems integrator. Gaining hands-on exposure to real-world technology infrastructure and operations.',
+    org: 'ipNX Nigeria, Lagos',
+    desc: 'Advanced through the SIWES placement pipeline at ipNX, a leading Nigerian ISP. Passed the HR stage and progressed through structured technical evaluation rounds.',
   },
   {
     period: '2025',
-    role: 'Data Science Practitioner',
-    org: 'WorldQuant University DS Labs',
-    desc: 'Working through applied data science project notebooks covering statistical analysis, NLP tasks, and ML visualisation. Applied to Deep Learning Indaba 2026 and the AWS AI & ML Scholars Program.',
+    role: 'Data Science Researcher',
+    org: 'WQU DS Labs / DSA Summer School',
+    desc: 'Completed entry notebook covering Uganda CPI analysis, NLP tasks, and Gaussian ML visualisation. Applied to Deep Learning Indaba 2026 and AWS AI & ML Scholars Program.',
+  },
+  {
+    period: '2024 — Present',
+    role: 'Male Representative',
+    org: 'McPherson Chorale',
+    desc: 'Serve as Male Rep in the university choir. Active keyboardist in gospel and contemporary worship — chord extensions, voice layering, praise progressions.',
   },
 ]
-
-const ROLES = ['ML Engineer', 'Data Scientist', 'AI Developer']
 
 // ─── HOOKS ────────────────────────────────────────────────────────────────────
 
@@ -166,6 +163,7 @@ function Nav() {
           Iyinoluwa Don-Taiwo
         </span>
 
+        {/* Desktop */}
         <div style={{ display: 'flex', gap: 32 }} className="desk-nav">
           {NAV.map(l => (
             <button key={l} onClick={() => go(l)} style={{
@@ -179,6 +177,7 @@ function Nav() {
           ))}
         </div>
 
+        {/* Mobile toggle */}
         <button onClick={() => setOpen(!open)} className="mob-toggle" style={{
           background: 'none', border: 'none', cursor: 'pointer',
           color: 'var(--text)', fontSize: 13, fontFamily: 'inherit',
@@ -188,6 +187,7 @@ function Nav() {
         </button>
       </nav>
 
+      {/* Mobile menu */}
       {open && (
         <div style={{
           position: 'fixed', inset: 0, zIndex: 99,
@@ -224,33 +224,12 @@ function Hero() {
       minHeight: '100vh',
       display: 'flex', alignItems: 'center',
       padding: 'clamp(80px,14vh,120px) clamp(20px,5vw,64px) 80px',
-      position: 'relative', overflow: 'hidden',
     }}>
+      <div style={{ maxWidth: 760 }}>
 
-      {/* Subtle grid background */}
-      <div style={{
-        position: 'absolute', inset: 0, pointerEvents: 'none',
-        backgroundImage: 'linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)',
-        backgroundSize: '80px 80px',
-        opacity: 0.35,
-        maskImage: 'radial-gradient(ellipse 70% 70% at 40% 50%, black 20%, transparent 100%)',
-        WebkitMaskImage: 'radial-gradient(ellipse 70% 70% at 40% 50%, black 20%, transparent 100%)',
-      }} />
-
-      {/* Blue radial glow */}
-      <div style={{
-        position: 'absolute', top: '25%', left: '-5%',
-        width: 700, height: 700, borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(79,142,247,0.055) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
-
-      <div style={{ maxWidth: 760, position: 'relative' }}>
-
-        {/* Available pill */}
         <p style={{
           fontSize: 13, color: 'var(--blue)',
-          fontWeight: 500, marginBottom: 28,
+          fontWeight: 500, marginBottom: 32,
           display: 'flex', alignItems: 'center', gap: 8,
           animation: 'fadeUp 0.5s ease both',
         }}>
@@ -262,24 +241,6 @@ function Hero() {
           Available for opportunities
         </p>
 
-        {/* Role chips */}
-        <div style={{
-          display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 32,
-          animation: 'fadeUp 0.5s 0.04s ease both',
-        }}>
-          {ROLES.map((r, i) => (
-            <span key={r} style={{
-              fontSize: 11, fontWeight: 500, letterSpacing: '0.06em',
-              textTransform: 'uppercase',
-              color: i === 0 ? 'var(--blue)' : 'var(--muted)',
-              border: `1px solid ${i === 0 ? 'rgba(79,142,247,0.35)' : 'var(--border)'}`,
-              borderRadius: 4, padding: '3px 10px',
-              background: i === 0 ? 'rgba(79,142,247,0.06)' : 'transparent',
-            }}>{r}</span>
-          ))}
-        </div>
-
-        {/* Headline */}
         <h1 style={{
           fontSize: 'clamp(38px, 6vw, 68px)',
           fontWeight: 300,
@@ -287,28 +248,25 @@ function Hero() {
           lineHeight: 1.08,
           color: 'var(--text)',
           marginBottom: 28,
-          animation: 'fadeUp 0.5s 0.08s ease both',
+          animation: 'fadeUp 0.5s 0.06s ease both',
         }}>
-          Building ML systems<br />
-          <span style={{ color: 'var(--blue)' }}>that learn from data.</span>
+          ML Engineer building<br />
+          <span style={{ color: 'var(--blue)' }}>NLP &amp; Vision</span> systems.
         </h1>
 
-        {/* Subtitle */}
         <p style={{
           fontSize: 16, fontWeight: 300,
           color: 'var(--muted)', lineHeight: 1.75,
           maxWidth: 520, marginBottom: 48,
-          animation: 'fadeUp 0.5s 0.14s ease both',
+          animation: 'fadeUp 0.5s 0.12s ease both',
         }}>
-          I work across the full ML stack — data wrangling, model training,
-          evaluation, and cloud deployment. Computer Science student
-          based in Lagos, Nigeria.
+          300-Level Computer Science student at McPherson University with a 4.55 CGPA.
+          I train models, deploy cloud pipelines, and lead PyClub McPherson — a student AI programming community.
         </p>
 
-        {/* CTAs */}
         <div style={{
           display: 'flex', gap: 12, flexWrap: 'wrap',
-          animation: 'fadeUp 0.5s 0.20s ease both',
+          animation: 'fadeUp 0.5s 0.18s ease both',
         }}>
           <a
             href="#projects"
@@ -357,13 +315,6 @@ function Hero() {
 
 // ─── ABOUT ────────────────────────────────────────────────────────────────────
 
-const FOCUS_AREAS = [
-  'Machine Learning Engineering',
-  'Data Science & Analytics',
-  'Cloud-Native ML Deployment',
-  'Predictive Modelling',
-]
-
 function About() {
   const [ref, vis] = useInView()
   return (
@@ -377,53 +328,33 @@ function About() {
           gap: 'clamp(32px,6vw,96px)',
           alignItems: 'start',
         }}>
-          {/* Left: text */}
           <div>
             <p style={{ fontSize: 11, fontWeight: 500, color: 'var(--muted)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 20 }}>About</p>
             <h2 style={{ fontSize: 'clamp(22px,3vw,30px)', fontWeight: 300, letterSpacing: '-0.02em', lineHeight: 1.35, marginBottom: 24, color: 'var(--text)' }}>
-              Student, builder,<br />perpetual learner.
+              Student, builder,<br />community leader.
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               {[
-                "I'm a Computer Science student building toward a career in ML Engineering and Data Science. I work across the full stack — data cleaning, modelling, evaluation, and cloud deployment.",
-                "I've shipped end-to-end projects across predictive modelling, serverless APIs, data analysis pipelines, and full-stack web applications.",
-                "Expected graduation July 2027. Based in Lagos, Nigeria.",
+                "I'm a Computer Science student focused on Machine Learning Engineering, with depth in NLP and Computer Vision. I work across the full ML stack — data, modelling, evaluation, and cloud deployment.",
+                "I founded PyClub McPherson to grow the next generation of ML engineers at my university, mentoring students and running workshops on Python and AI fundamentals.",
+                "First Class Standing, 4.55 CGPA. Expected graduation July 2027.",
               ].map((t, i) => (
                 <p key={i} style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.8 }}>{t}</p>
               ))}
             </div>
           </div>
 
-          {/* Right: focus areas */}
-          <div style={{
-            display: 'flex', flexDirection: 'column',
-            border: '1px solid var(--border)', borderRadius: 8, overflow: 'hidden',
-            alignSelf: 'start',
-          }}>
-            <p style={{
-              fontSize: 10, fontWeight: 500, letterSpacing: '0.1em',
-              textTransform: 'uppercase', color: 'var(--muted)',
-              padding: '14px 24px',
-              borderBottom: '1px solid var(--border)',
-              background: 'var(--bg-card)',
-            }}>Focus Areas</p>
-            {FOCUS_AREAS.map((area, i) => (
-              <div key={area} style={{
-                background: 'var(--bg-card)',
-                padding: '18px 24px',
-                borderBottom: i < FOCUS_AREAS.length - 1 ? '1px solid var(--border)' : 'none',
-                display: 'flex', alignItems: 'center', gap: 14,
-                transition: 'background 0.15s',
-                cursor: 'default',
-              }}
-                onMouseEnter={e => e.currentTarget.style.background = 'var(--bg-hover)'}
-                onMouseLeave={e => e.currentTarget.style.background = 'var(--bg-card)'}
-              >
-                <span style={{
-                  width: 5, height: 5, borderRadius: '50%',
-                  background: 'var(--blue)', flexShrink: 0, opacity: 0.7,
-                }} />
-                <p style={{ fontSize: 13, color: 'var(--muted)', fontWeight: 400 }}>{area}</p>
+          {/* Stats */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: 'var(--border)', border: '1px solid var(--border)', borderRadius: 8, overflow: 'hidden', alignSelf: 'start' }}>
+            {[
+              { n: '4.55', l: 'CGPA' },
+              { n: '300L', l: 'Computer Science' },
+              { n: '5+', l: 'Projects shipped' },
+              { n: '2027', l: 'Expected graduation' },
+            ].map(({ n, l }) => (
+              <div key={l} style={{ background: 'var(--bg-card)', padding: '28px 24px' }}>
+                <p style={{ fontSize: 26, fontWeight: 300, letterSpacing: '-0.03em', color: 'var(--text)', marginBottom: 4 }}>{n}</p>
+                <p style={{ fontSize: 12, color: 'var(--muted)' }}>{l}</p>
               </div>
             ))}
           </div>
@@ -497,13 +428,13 @@ function ProjectRow({ project, last }) {
         </div>
         <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
           <span style={{ fontSize: 12, color: 'var(--muted)' }}>{project.year}</span>
-          {project.github && project.github !== '#' && (
+          {project.github && (
             <a href={project.github} target="_blank" rel="noopener noreferrer"
               style={{ fontSize: 12, color: hov ? 'var(--text)' : 'var(--muted)', transition: 'color 0.15s' }}>
               GitHub ↗
             </a>
           )}
-          {project.demo && project.demo !== '#' && (
+          {project.demo && (
             <a href={project.demo} target="_blank" rel="noopener noreferrer"
               style={{ fontSize: 12, color: hov ? 'var(--blue)' : 'var(--muted)', transition: 'color 0.15s' }}>
               Demo ↗
