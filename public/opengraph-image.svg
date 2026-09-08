@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#08090b"/>
+  <path stroke="#252932" stroke-width="1" opacity=".65" d="M0 90h1200M0 180h1200M0 270h1200M0 360h1200M0 450h1200M0 540h1200M90 0v630M180 0v630M270 0v630M360 0v630M450 0v630M540 0v630M630 0v630M720 0v630M810 0v630M900 0v630M990 0v630M1080 0v630M1170 0v630"/>
+  <circle cx="250" cy="235" r="250" fill="#75a7ff" opacity=".09"/>
+  <text x="100" y="190" fill="#75a7ff" font-family="Arial, sans-serif" font-size="24" letter-spacing="6">IYINOLUWA DON-TAIWO</text>
+  <text x="100" y="320" fill="#f2f4f7" font-family="Arial, sans-serif" font-size="78" font-weight="700">Building systems</text>
+  <text x="100" y="410" fill="#75a7ff" font-family="Arial, sans-serif" font-size="78" font-weight="700">that learn.</text>
+  <text x="100" y="500" fill="#98a0ad" font-family="Arial, sans-serif" font-size="24">ML Engineer · Data Scientist · AI Developer</text>
+</svg>
