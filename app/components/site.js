@@ -8,7 +8,8 @@ export const links = {
   linkedin: 'https://www.linkedin.com/in/iyinoluwa-don-taiwo',
   x: 'https://x.com/IyinoluwaDon',
   resume: 'https://drive.google.com/file/d/1tfqpzJGjKhv0-8xrAHvL8APg215-noPx/view?usp=drive_link',
-  photo: '/iyinoluwa-don-taiwo.jpeg',
+  // The version query bypasses any browser cache that stored an earlier missing-image response.
+  photo: '/iyinoluwa-don-taiwo.jpeg?v=20260919',
 }
 
 export function Arrow() {
