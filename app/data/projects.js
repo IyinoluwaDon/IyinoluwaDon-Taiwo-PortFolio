@@ -43,13 +43,4 @@ export const projects = [
     github: 'https://github.com/IyinoluwaDon/C10-team-Ethopie',
     accent: 'from-cyan-500/20 via-cyan-500/5 to-transparent',
   },
-  {
-    number: '04',
-    title: 'Student Grade Prediction System',
-    type: 'Applied machine learning',
-    description: 'An early-risk screening workflow built from 30 start-of-term features, intentionally excluding prior grades. It compares six classifiers and provides prediction, ROC, model-comparison, and feature-insight views.',
-    stack: ['Python', 'scikit-learn', 'XGBoost', 'Streamlit'],
-    github: 'https://github.com/IyinoluwaDon/gradePrediction-Model',
-    accent: 'from-amber-500/20 via-amber-500/5 to-transparent',
-  },
 ]

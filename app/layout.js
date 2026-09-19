@@ -15,7 +15,7 @@ const manrope = Manrope({
 
 export const metadata = {
   title: 'Iyinoluwa Don-Taiwo | ML Engineer & Data Scientist',
-  description: 'Portfolio of Iyinoluwa Don-Taiwo, a Computer Science student building machine learning systems, data products, and cloud-native APIs.',
+  description: 'Portfolio of Iyinoluwa Don-Taiwo, a Machine Learning Engineer, Data Scientist, and AI Researcher building intelligent systems and data-driven products.',
   metadataBase: new URL('https://iyinoluwa-don-taiwo.vercel.app/'),
   alternates: {
     canonical: '/',

@@ -6,6 +6,7 @@ export const links = {
   email: 'iyinoluwadontaiwo@gmail.com',
   github: 'https://github.com/IyinoluwaDon',
   linkedin: 'https://www.linkedin.com/in/iyinoluwa-don-taiwo',
+  x: 'https://x.com/IyinoluwaDon',
   resume: 'https://drive.google.com/file/d/1tfqpzJGjKhv0-8xrAHvL8APg215-noPx/view?usp=drive_link',
   photo: 'https://github.com/IyinoluwaDon.png',
 }
@@ -57,7 +58,7 @@ export function Header() {
           <a href="/" aria-label="Iyinoluwa Don-Taiwo home" className="font-display text-sm font-semibold tracking-tight text-copy">ID<span className="text-electric">.</span></a>
           <nav className="hidden items-center gap-8 md:flex" aria-label="Primary navigation">
             {nav.map(([label, href]) => <a key={label} href={href} className="text-xs text-quiet transition-colors hover:text-copy">{label}</a>)}
-            <a href={links.resume} target="_blank" rel="noreferrer" className="rounded-full border border-electric/40 px-4 py-2 text-xs text-electric transition-colors hover:bg-electric hover:text-ink">Resume <Arrow /></a>
+            <a href={links.resume} target="_blank" rel="noopener noreferrer" className="rounded-full border border-electric/40 px-4 py-2 text-xs text-electric transition-colors hover:bg-electric hover:text-ink">View Resume <Arrow /></a>
           </nav>
           <button type="button" ref={menuButtonRef} className="flex h-10 w-10 items-center justify-center rounded-lg border border-ink/15 md:hidden" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)}>
             <MenuIcon open={open} />
@@ -66,7 +67,7 @@ export function Header() {
       </header>
       {open && <nav className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-[#f6f3ee] px-6 md:hidden" aria-label="Mobile navigation">
         {nav.map(([label, href], index) => <a key={label} ref={index === 0 ? firstMenuLinkRef : undefined} href={href} onClick={() => setOpen(false)} className="font-display text-3xl tracking-tight text-copy">{label}</a>)}
-        <a href={links.resume} target="_blank" rel="noreferrer" onClick={() => setOpen(false)} className="mt-4 rounded-full border border-electric/40 px-5 py-2 text-sm text-electric">Resume <Arrow /></a>
+        <a href={links.resume} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="mt-4 rounded-full border border-electric/40 px-5 py-2 text-sm text-electric">View Resume <Arrow /></a>
       </nav>}
     </>
   )
