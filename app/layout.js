@@ -1,7 +1,6 @@
 import { Inter, Manrope } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
-// 1. Import Next.js Script component
-import Script from 'next/script' 
 
 const inter = Inter({
   subsets: ['latin'],
@@ -46,15 +45,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.variable} ${manrope.variable}`}>
         {children}
-
-        {/* 2. Botpress Chatbot Scripts */}
-        <Script 
-          src="https://botpress.cloud" 
-          strategy="afterInteractive" 
+        <Script
+          src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"
+          strategy="afterInteractive"
         />
-        <Script 
-          src="https://bpcontent.cloud" 
-          strategy="afterInteractive" 
+        <Script
+          src="https://files.bpcontent.cloud/2026/09/19/18/20260919180504-D8YF0M0G.js"
+          strategy="afterInteractive"
         />
       </body>
     </html>
