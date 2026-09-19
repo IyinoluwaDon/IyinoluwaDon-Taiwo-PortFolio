@@ -6,7 +6,7 @@ export const links = {
   email: 'iyinoluwadontaiwo@gmail.com',
   github: 'https://github.com/IyinoluwaDon',
   linkedin: 'https://www.linkedin.com/in/iyinoluwa-don-taiwo',
-  resume: 'https://drive.google.com/file/d/1NjTPUcF5C-Aq-1GrE13sBDj7vMcQS_pi/view?usp=drive_link',
+  resume: 'https://drive.google.com/uc?export=download&id=1NjTPUcF5C-Aq-1GrE13sBDj7vMcQS_pi',
 }
 
 export function Arrow() {
@@ -72,7 +72,7 @@ export function Header() {
 }
 
 export function Footer() {
-  return <footer className="border-t border-white/[0.07] px-5 py-6 sm:px-8 lg:px-12"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 text-xs text-quiet"><p>© {new Date().getFullYear()} Iyinoluwa Don-Taiwo. All rights reserved.</p><p>Lagos, Nigeria · Built with Next.js & Tailwind CSS</p></div></footer>
+  return <footer className="border-t border-white/[0.07] px-5 py-6 sm:px-8 lg:px-12"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 text-xs text-quiet"><p>© {new Date().getFullYear()} Iyinoluwa Don-Taiwo. All rights reserved.</p><p>Lagos, Nigeria</p></div></footer>
 }
 
 export function Shell({ children }) {
