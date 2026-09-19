@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 * {
@@ -17,14 +17,14 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: #08090b;
-  color: #f2f4f7;
+  background: #f6f3ee;
+  color: #24211e;
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: rgba(117, 167, 255, 0.35);
+  background: rgba(184, 74, 50, 0.25);
   color: #fff;
 }
 

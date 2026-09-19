@@ -31,6 +31,7 @@ export const projects = [
     description: 'A multimodal system for flagging mismatches between product images and listing text — a useful signal for recycled imagery and mislabeled catalog entries. It compares TF-IDF, ResNet18, and a DistilBERT–ResNet18 fusion approach on Rakuten France data.',
     stack: ['Python', 'DistilBERT', 'ResNet18', 'TF-IDF'],
     github: 'https://github.com/IyinoluwaDon/ecommerce-listing-consistency-detector',
+    demo: 'https://huggingface.co/spaces/iyinoluwa/moderation-demo',
     accent: 'from-violet-500/20 via-violet-500/5 to-transparent',
   },
   {
