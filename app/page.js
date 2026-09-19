@@ -1,27 +1,60 @@
 import { projects } from './data/projects'
 import { Arrow, Footer, Header, SectionLabel, links } from './components/site'
 
+const focusAreas = [
+  ['Vision systems', 'Medical imaging, visual features, and deep learning.'],
+  ['Language models', 'Fine-tuning, evaluation, and culturally grounded NLP.'],
+  ['Applied data', 'Experiments, analysis, and products people can use.'],
+]
+
 export default function Home() {
   return (
     <main className="overflow-hidden">
       <Header />
-      <section aria-labelledby="hero-title" className="relative flex min-h-[88vh] items-center border-b border-ink/10 px-5 pb-20 pt-32 sm:px-8 lg:min-h-[92vh] lg:px-12">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[linear-gradient(90deg,transparent_0,rgba(184,74,50,0.12)_50%,transparent_100%)]" />
-        <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20"><div>
-          <div className="mb-8 flex items-center gap-3 text-xs font-medium text-electric"><span className="h-2 w-2 rounded-full bg-electric" />Open to ML internships & research collaborations</div>
-          <p className="mb-5 text-xs uppercase tracking-[0.2em] text-quiet">Machine Learning Engineer · Data Scientist · AI Researcher</p>
-          <h1 id="hero-title" className="font-display text-5xl font-semibold leading-[1.02] tracking-[-0.055em] text-copy sm:text-7xl">I build useful<br /><span className="text-electric">machine learning</span><br />systems.</h1>
-          <p className="mt-8 max-w-xl text-base leading-8 text-quiet sm:text-lg">I develop and research intelligent systems that turn complex data into practical insight—from computer vision and language models to multimodal AI applications.</p>
-          <div className="mt-10 flex flex-wrap gap-3"><a href="/work" className="rounded-lg bg-ink px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5">Explore my work <Arrow /></a><a href={links.resume} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-ink/20 px-5 py-3 text-sm text-copy transition-colors hover:border-electric hover:text-electric">View Resume <Arrow /></a></div>
-        </div><figure className="relative mx-auto w-full max-w-sm lg:max-w-none"><div className="absolute -inset-4 -z-10 rounded-[2rem] bg-electric/10" /><img src={links.photo} alt="Iyinoluwa Don-Taiwo" className="aspect-[4/5] w-full rounded-[1.5rem] object-cover object-top grayscale transition duration-500 hover:grayscale-0" /><figcaption className="mt-4 flex items-center justify-between text-xs text-quiet"><span>Iyinoluwa Don-Taiwo</span><span>Lagos, Nigeria</span></figcaption></figure></div>
+
+      <section aria-labelledby="hero-title" className="relative isolate border-b border-ink/10 px-5 pb-16 pt-28 sm:px-8 sm:pt-36 lg:px-12 lg:pb-24">
+        <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[38rem] bg-[radial-gradient(circle_at_74%_35%,rgba(184,74,50,0.18),transparent_25rem),linear-gradient(120deg,rgba(255,255,255,0.72),transparent_60%)]" />
+        <div className="mx-auto grid max-w-7xl items-end gap-12 lg:min-h-[660px] lg:grid-cols-[1.15fr_0.85fr] lg:gap-24">
+          <div className="pb-2">
+            <p className="mb-7 text-[11px] font-semibold uppercase tracking-[0.2em] text-electric">Machine learning engineer · Data scientist · AI researcher</p>
+            <h1 id="hero-title" className="max-w-4xl font-display text-[clamp(3.2rem,7.3vw,6.75rem)] font-semibold leading-[0.94] tracking-[-0.07em] text-copy">Making data<br />do <span className="relative inline-block text-electric">useful work<span aria-hidden="true" className="absolute -bottom-2 left-1 h-px w-[92%] bg-electric/40" /></span>.</h1>
+            <p className="mt-9 max-w-xl text-base leading-8 text-quiet sm:text-lg">I develop machine-learning systems that move from rigorous experimentation to practical, inspectable tools - across computer vision, language models, multimodal AI, and data products.</p>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <a href="/work" className="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5">Explore selected work <Arrow /></a>
+              <a href={links.resume} target="_blank" rel="noopener noreferrer" className="rounded-full border border-ink/20 bg-white/50 px-5 py-3 text-sm font-semibold text-copy transition-colors hover:border-electric hover:text-electric">View resume <Arrow /></a>
+            </div>
+          </div>
+
+          <figure className="relative mx-auto flex w-full max-w-md flex-col items-center pb-3 lg:items-end">
+            <div aria-hidden="true" className="absolute left-1/2 top-[13%] -z-10 h-64 w-64 -translate-x-1/2 rounded-full border border-electric/25 sm:h-80 sm:w-80 lg:left-auto lg:right-8 lg:translate-x-0" />
+            <div className="relative rounded-full bg-panel p-2 shadow-[0_20px_60px_rgba(36,33,30,0.13)]">
+              <img src={links.photo} alt="Iyinoluwa Don-Taiwo" className="h-56 w-56 rounded-full object-cover object-top sm:h-72 sm:w-72" />
+              <span aria-hidden="true" className="absolute bottom-5 right-3 grid h-12 w-12 place-items-center rounded-full bg-electric text-lg text-white shadow-lg">↗</span>
+            </div>
+            <figcaption className="mt-6 flex w-full max-w-xs items-center justify-between border-t border-ink/10 pt-4 text-xs text-quiet"><span>Iyinoluwa Don-Taiwo</span><span>Lagos, Nigeria</span></figcaption>
+          </figure>
+        </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24"><div><SectionLabel>01 / Practice</SectionLabel><h2 className="font-display text-3xl font-semibold tracking-[-0.04em] text-copy sm:text-5xl">Research-minded.<br />Product-focused.</h2></div><div className="space-y-8"><p className="max-w-xl text-lg leading-9 text-quiet">My work sits at the intersection of machine learning research and real product delivery: asking the right questions, experimenting carefully, and communicating results clearly.</p><div className="grid gap-4 sm:grid-cols-3">{[['Vision', 'Images, medical scans, and visual signals'], ['Language', 'NLP, generative models, and evaluation'], ['Systems', 'Experiments, APIs, demos, and deployment']].map(([title, copy]) => <div key={title} className="border-l-2 border-electric pl-4"><h3 className="font-display text-lg font-semibold text-copy">{title}</h3><p className="mt-2 text-sm leading-6 text-quiet">{copy}</p></div>)}</div><a href="/about" className="inline-flex text-sm font-semibold text-electric hover:text-copy">More about my approach <Arrow /></a></div></div>
+        <div className="grid gap-12 lg:grid-cols-[0.76fr_1.24fr] lg:gap-24">
+          <div><SectionLabel>01 / How I work</SectionLabel><h2 className="max-w-sm font-display text-4xl font-semibold leading-[1.02] tracking-[-0.05em] text-copy sm:text-5xl">Research-minded.<br />Delivery-aware.</h2></div>
+          <div>
+            <p className="max-w-2xl text-lg leading-9 text-quiet">The throughline in my work is clarity: frame the problem, make the data trustworthy, evaluate the model honestly, and present the result in a form that people can understand and use.</p>
+            <div className="mt-10 grid gap-4 sm:grid-cols-3">{focusAreas.map(([title, copy], index) => <article key={title} className="border-t border-ink/15 pt-4"><span className="text-xs font-semibold text-electric">0{index + 1}</span><h3 className="mt-7 font-display text-xl font-semibold text-copy">{title}</h3><p className="mt-3 text-sm leading-7 text-quiet">{copy}</p></article>)}</div>
+            <a href="/about" className="mt-10 inline-flex text-sm font-semibold text-electric transition-colors hover:text-copy">More about my approach <Arrow /></a>
+          </div>
+        </div>
       </section>
 
-      <section className="border-y border-ink/10 bg-white/40 px-5 py-24 sm:px-8 lg:px-12 lg:py-32"><div className="mx-auto max-w-7xl"><div className="mb-12 flex flex-wrap items-end justify-between gap-6"><div><SectionLabel>02 / Selected work</SectionLabel><h2 className="font-display text-3xl font-semibold tracking-[-0.04em] text-copy sm:text-4xl">Projects you can inspect.</h2></div><a href="/work" className="text-sm text-quiet hover:text-electric">See every project <Arrow /></a></div><div className="grid gap-5 lg:grid-cols-3">{projects.slice(0, 3).map((project) => <a href="/work" key={project.number} className="rounded-xl border border-ink/10 bg-panel p-6 transition-colors hover:border-electric"><span className="text-sm font-medium text-electric">{project.number}</span><p className="mt-7 text-[11px] uppercase tracking-[0.14em] text-quiet">{project.type}</p><h3 className="mt-3 font-display text-xl font-semibold text-copy">{project.title}</h3><p className="mt-4 text-sm leading-7 text-quiet">{project.description}</p><span className="mt-6 block text-sm font-medium text-electric">See project <Arrow /></span></a>)}</div></div></section>
-      <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:px-12 lg:py-32"><div className="rounded-3xl bg-ink px-7 py-12 sm:px-12 sm:py-16"><SectionLabel>03 / Let&apos;s connect</SectionLabel><h2 className="max-w-3xl font-display text-4xl font-semibold tracking-[-0.05em] text-white sm:text-6xl">Interested in building intelligent products together?</h2><p className="mt-6 max-w-xl text-base leading-8 text-[#d8d2c8]">I&apos;m open to ML engineering, data science, research, and collaborative opportunities.</p><div className="mt-8 flex flex-wrap gap-3"><a href="/contact" className="rounded-lg bg-white px-5 py-3 text-sm font-semibold text-ink">Start a conversation <Arrow /></a><a href={links.resume} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-white/30 px-5 py-3 text-sm text-white hover:border-electric hover:text-electric">View Resume <Arrow /></a></div></div></section>
+      <section className="border-y border-ink/10 bg-[#efe9df]/60 px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 flex flex-wrap items-end justify-between gap-6"><div><SectionLabel>02 / Selected work</SectionLabel><h2 className="font-display text-4xl font-semibold tracking-[-0.05em] text-copy sm:text-5xl">Work with evidence.</h2></div><a href="/work" className="text-sm font-medium text-quiet transition-colors hover:text-electric">See all projects <Arrow /></a></div>
+          <div className="grid gap-5 lg:grid-cols-3">{projects.map((project) => <article key={project.number} className="group flex min-h-[390px] flex-col rounded-2xl border border-ink/10 bg-panel p-6 transition-all hover:-translate-y-1 hover:border-electric/60 hover:shadow-[0_18px_40px_rgba(36,33,30,0.08)] sm:p-7"><div className="flex items-center justify-between"><span className="text-sm font-semibold text-electric">{project.number}</span>{project.result && <span className="rounded-full bg-[#f2e7e0] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-electric">{project.result}</span>}</div><p className="mt-9 text-[11px] font-medium uppercase tracking-[0.14em] text-quiet">{project.type}</p><h3 className="mt-3 font-display text-2xl font-semibold leading-tight text-copy">{project.title}</h3><p className="mt-4 text-sm leading-7 text-quiet">{project.description}</p><a href="/work" className="mt-auto pt-8 text-sm font-semibold text-electric">Inspect project <Arrow /></a></article>)}</div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:px-12 lg:py-32"><div className="relative overflow-hidden rounded-[2rem] bg-ink px-7 py-12 sm:px-12 sm:py-16"><div aria-hidden="true" className="absolute -right-16 -top-16 h-64 w-64 rounded-full border border-electric/35" /><SectionLabel>03 / Let&apos;s connect</SectionLabel><h2 className="relative max-w-3xl font-display text-4xl font-semibold tracking-[-0.055em] text-white sm:text-6xl">Have a problem worth exploring?</h2><p className="relative mt-6 max-w-xl text-base leading-8 text-[#d8d2c8]">I&apos;m open to ML engineering, data science, AI research, and collaborative opportunities.</p><div className="relative mt-9 flex flex-wrap gap-3"><a href="/contact" className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-ink transition-transform hover:-translate-y-0.5">Start a conversation <Arrow /></a><a href={links.github} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-electric hover:text-electric">GitHub <Arrow /></a></div></div></section>
       <Footer />
     </main>
   )

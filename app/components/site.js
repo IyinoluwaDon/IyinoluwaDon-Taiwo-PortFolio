@@ -55,17 +55,20 @@ export function Header() {
     <>
       <header className="fixed inset-x-0 top-0 z-50 border-b border-ink/10 bg-[#f6f3ee]/90 backdrop-blur-xl">
         <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12">
-          <a href="/" aria-label="Iyinoluwa Don-Taiwo home" className="font-display text-sm font-semibold tracking-tight text-copy">ID<span className="text-electric">.</span></a>
+          <a href="/" aria-label="Iyinoluwa Don-Taiwo home" className="group flex items-center gap-3">
+            <span aria-hidden="true" className="grid h-9 w-9 place-items-center rounded-full border border-ink/20 bg-panel font-display text-xs font-bold tracking-[-0.1em] text-copy transition-colors group-hover:border-electric group-hover:text-electric">ID</span>
+            <span className="hidden font-display text-xs font-semibold leading-tight tracking-[-0.02em] text-copy sm:block">Iyinoluwa<br /><span className="font-sans text-[10px] font-medium uppercase tracking-[0.14em] text-quiet">Don-Taiwo</span></span>
+          </a>
           <nav className="hidden items-center gap-8 md:flex" aria-label="Primary navigation">
             {nav.map(([label, href]) => <a key={label} href={href} className="text-xs text-quiet transition-colors hover:text-copy">{label}</a>)}
             <a href={links.resume} target="_blank" rel="noopener noreferrer" className="rounded-full border border-electric/40 px-4 py-2 text-xs text-electric transition-colors hover:bg-electric hover:text-ink">View Resume <Arrow /></a>
           </nav>
-          <button type="button" ref={menuButtonRef} className="flex h-10 w-10 items-center justify-center rounded-lg border border-ink/15 md:hidden" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)}>
+          <button type="button" ref={menuButtonRef} className="flex h-10 w-10 items-center justify-center rounded-lg border border-ink/15 md:hidden" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-controls="mobile-navigation" aria-expanded={open} onClick={() => setOpen(!open)}>
             <MenuIcon open={open} />
           </button>
         </div>
       </header>
-      {open && <nav className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-[#f6f3ee] px-6 md:hidden" aria-label="Mobile navigation">
+      {open && <nav id="mobile-navigation" className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-[#f6f3ee] px-6 md:hidden" aria-label="Mobile navigation">
         {nav.map(([label, href], index) => <a key={label} ref={index === 0 ? firstMenuLinkRef : undefined} href={href} onClick={() => setOpen(false)} className="font-display text-3xl tracking-tight text-copy">{label}</a>)}
         <a href={links.resume} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="mt-4 rounded-full border border-electric/40 px-5 py-2 text-sm text-electric">View Resume <Arrow /></a>
       </nav>}

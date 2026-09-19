@@ -1,3 +1,63 @@
-// Add certificates here as they are ready to publish.
-// Example: { name: 'AWS Cloud Practitioner', issuer: 'Amazon Web Services', category: 'Cloud & Infrastructure', url: 'https://drive.google.com/...' }
-export const certificates = []
+// Add a Google Drive URL when a credential is ready to be shared publicly.
+// Cards without a URL remain visible, but do not pretend to be a working link.
+export const certificates = [
+  {
+    name: 'Azure AI Fundamentals (AI-900)',
+    issuer: 'Microsoft',
+    category: 'Cloud & AI',
+    date: 'December 2025',
+    url: 'https://drive.google.com/file/d/1ZWJo88SXXWibVkKnQbmoOEbH8fnExOOZ/view?usp=drive_link',
+  },
+  {
+    name: 'Azure Data Fundamentals (DP-900)',
+    issuer: 'Microsoft',
+    category: 'Data & Analytics',
+    url: 'https://drive.google.com/file/d/1VnXc_yrvWSplfQG-tW3Ykg2bmAt3JAnd/view?usp=drive_link',
+  },
+  {
+    name: 'Claude 101: AI Fluency - Framework & Foundations',
+    issuer: 'Anthropic via Skilljar',
+    category: 'AI & Research',
+    url: 'https://drive.google.com/file/d/160xWCmhF09hgn-IVAYg9T8PGy6BvOkgU/view?usp=drive_link',
+  },
+  {
+    name: 'Claude AI Fluency',
+    issuer: 'Anthropic via Skilljar',
+    category: 'AI & Research',
+    url: 'https://drive.google.com/file/d/1yyT9cvJPVRRzpH-31CTl8uIVOtmArRSm/view?usp=drive_link',
+  },
+  {
+    name: 'AI Bootcamp 2025 - Certificate of Participation',
+    issuer: 'Data Science Nigeria',
+    category: 'AI & Research',
+    date: 'October 2025',
+  },
+  {
+    name: 'Deep Learning IndabaX Nigeria - Certificate of Participation',
+    issuer: 'IndabaX Nigeria',
+    category: 'AI & Research',
+  },
+  {
+    name: 'AWS AI Practitioner Challenge - Verified Course Completion',
+    issuer: 'Udacity',
+    category: 'Cloud & AI',
+  },
+  {
+    name: 'Introduction to Amazon EC2',
+    issuer: 'AWS Training & Certification',
+    category: 'Cloud & AI',
+    date: 'March 2026',
+  },
+  {
+    name: 'Introduction to Amazon API Gateway',
+    issuer: 'AWS Training & Certification',
+    category: 'Cloud & AI',
+    date: 'March 2026',
+  },
+  {
+    name: 'Amazon DynamoDB Service Introduction',
+    issuer: 'AWS Training & Certification',
+    category: 'Cloud & AI',
+    date: 'January 2026',
+  },
+]
