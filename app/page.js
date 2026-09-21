@@ -28,11 +28,23 @@ export default function Home() {
           <figure className="reveal-up relative mx-auto flex w-full max-w-md flex-col items-center pb-3 lg:items-end" style={{ '--reveal-delay': '220ms' }}>
             <div aria-hidden="true" className="absolute left-1/2 top-[13%] -z-10 h-64 w-64 -translate-x-1/2 sm:h-80 sm:w-80 lg:left-auto lg:right-8 lg:translate-x-0"><span className="slow-orbit absolute inset-0 rounded-full border border-electric/25 border-dashed" /></div>
             <div className="soft-float relative rounded-full bg-panel p-2 shadow-[0_20px_60px_rgba(36,33,30,0.13)]">
-              <img src={links.photo} alt="Iyinoluwa Don-Taiwo" className="h-56 w-56 rounded-full object-cover object-[center_28%] sm:h-72 sm:w-72" />
-              <span aria-hidden="true" className="absolute bottom-5 right-3 grid h-12 w-12 place-items-center rounded-full bg-electric text-lg text-white shadow-lg">↗</span>
+            <img src="/portrait.jpg" alt="Iyinoluwa Don-Taiwo" style={{
+              width: "300px",
+              height: "300px",
+              objectFit: "cover",
+              borderRadius: "50%",
+              display: "block",
+            }}
+/>          <span aria-hidden="true" className="absolute bottom-5 right-3 grid h-12 w-12 place-items-center rounded-full bg-electric text-lg text-white shadow-lg">↗</span>
             </div>
             <figcaption className="mt-6 flex w-full max-w-xs items-center justify-between border-t border-ink/10 pt-4 text-xs text-quiet"><span>Iyinoluwa Don-Taiwo</span><span>Lagos, Nigeria</span></figcaption>
           </figure>
+
+
+
+
+
+
         </div>
       </section>
 
